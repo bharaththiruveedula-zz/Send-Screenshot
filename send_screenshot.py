@@ -2,7 +2,7 @@ import gtk.gdk
 import json
 import subprocess
 
-API_KEY = 'v1sBatpSmRbXesCykoP3cIfYKWctVUT1ZKujAbc2eurOS'
+API_KEY = <API KEY>
 w = gtk.gdk.get_default_root_window()
 sz = w.get_size()
 pb = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB,False,8,sz[0],sz[1])
@@ -21,7 +21,7 @@ signature = data['data']['signature']
 policy = data['data']['policy']
 
 print subprocess.check_output(['curl', '-F','awsaccesskeyid='+awsaccesskeyid, '-F','acl=public-read','-F','key='+key, '-F', 'signature='+signature,'-F', 'policy='+policy,'-F','content-type=image/png', '-F', 'file=@screenshot.png','-i', '-X','POST',upload_url])
-print subprocess.check_output(['curl','-u', str(API_KEY)+':', '-d', 'device_iden=ujAbc2eurOSdjz2gRnO9Aq','-d','type=file','-d','file_name='+file_name,'-d','file_url='+file_url,'-d', 'file_type=image/png','-X','POST','https://api.pushbullet.com/api/pushes'])
+print subprocess.check_output(['curl','-u', str(API_KEY)+':', '-d', 'device_iden=<device iden>','-d','type=file','-d','file_name='+file_name,'-d','file_url='+file_url,'-d', 'file_type=image/png','-X','POST','https://api.pushbullet.com/api/pushes'])
 
 
 
